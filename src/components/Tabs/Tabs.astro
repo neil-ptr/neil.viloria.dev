@@ -5,15 +5,18 @@ import TabButton from "./TabButton.astro";
 ---
 
 <div>
-  <!-- Tab Buttons -->
-  <div class="flex gap-2 justify-center mb-4">
-    <div class=" border border-accent rounded-md">
-    <TabButton id="experience" label="Experience" />
-    <TabButton id="education" label="Education" />
+  <div class="gap-2 mb-4">
+    <div class="border border-accent rounded-md grid grid-cols-2">
+      <div class="p-1 justify-self-stretch">
+        <TabButton id="experience" label="Experience" />
+      </div>
+
+      <div class="p-1 justify-self-stretch">
+        <TabButton id="education" label="Education" />
+      </div>
     </div>
   </div>
 
-  <!-- Tab Content -->
   <div id="tab-content-experience" class="tab-content hidden">
     <ExperienceTab />
   </div>
@@ -22,12 +25,11 @@ import TabButton from "./TabButton.astro";
   </div>
 </div>
 
-<!-- Vanilla JS for tab switching -->
 <script is:inline>
   function switchTab(id) {
     document.querySelectorAll(".tab-btn").forEach((btn) => {
-      btn.classList.remove("text-foreground");
-      btn.classList.add("opacity-50");
+      btn.classList.remove("text-background", "bg-foreground");
+      btn.classList.add("opacity-50", "text-foreground");
     });
 
     document.querySelectorAll(".tab-content").forEach((el) =>
@@ -35,10 +37,10 @@ import TabButton from "./TabButton.astro";
     );
 
     const activeBtn = document.getElementById(`tab-btn-${id}`);
-    const activeContent = document.getElementById(`tab-content-${id}`);
+    activeBtn?.classList.add("text-background", "bg-foreground");
+    activeBtn?.classList.remove("opacity-50", "text-foreground");
 
-    activeBtn?.classList.add("text-foreground");
-    activeBtn?.classList.remove("opacity-50");
+    const activeContent = document.getElementById(`tab-content-${id}`);
     activeContent?.classList.remove("hidden");
   }
 

@@ -1,22 +1,14 @@
 ---
-type Props = {
-  imgSrc: string;
-  title: string;
-  description: string;
-  tags: string[];
-  link?: string;
-  source?: string;
-}
-
 const { imgSrc, title, description, tags, link, source } = Astro.props;
+import { Image } from 'astro:assets';
 ---
 
-<div class="rounded-xl border border-accent shadow-sm overflow-hidden transition hover:shadow-md">
-  <img src={imgSrc} alt={title} class="aspect-[5/3] p-6 object-cover" />
+<div class="rounded-xl border border-accent">
+  <Image src={imgSrc} alt={title} class="aspect-[5/3] p-6 w-full object-cover" width={600} height={170}/>
   
     <div class="pb-6 px-6">
       <h2 class="font-semibold">{title}</h2>
-      <p class="text-xs text-gray-600">{description}</p>
+      <p class="text-xs text-secondary">{description}</p>
     </div>
 
     <div class="pb-4 px-6">

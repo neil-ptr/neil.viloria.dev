@@ -3,7 +3,7 @@ const { id, label } = Astro.props;
 ---
 
 <button
-  class="tab-btn cursor-pointer px-4 py-2 text-foreground text-[13px]"
+  class="tab-btn cursor-pointer px-4 py-2 text-background text-[13px] rounded-md w-full"
   id={`tab-btn-${id}`}
   onclick={`switchTab('${id}')`}
 >
