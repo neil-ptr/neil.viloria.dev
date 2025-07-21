@@ -1,0 +1,48 @@
+---
+import ExperienceTab from "./ExperienceTab.astro";
+import EducationTab from "./EducationTab.astro";
+import TabButton from "./TabButton.astro";
+---
+
+<div>
+  <!-- Tab Buttons -->
+  <div class="flex gap-2 justify-center mb-4">
+    <div class=" border border-accent rounded-md">
+    <TabButton id="experience" label="Experience" />
+    <TabButton id="education" label="Education" />
+    </div>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="tab-content-experience" class="tab-content hidden">
+    <ExperienceTab />
+  </div>
+  <div id="tab-content-education" class="tab-content hidden">
+    <EducationTab />
+  </div>
+</div>
+
+<!-- Vanilla JS for tab switching -->
+<script is:inline>
+  function switchTab(id) {
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.classList.remove("text-foreground");
+      btn.classList.add("opacity-50");
+    });
+
+    document.querySelectorAll(".tab-content").forEach((el) =>
+      el.classList.add("hidden")
+    );
+
+    const activeBtn = document.getElementById(`tab-btn-${id}`);
+    const activeContent = document.getElementById(`tab-content-${id}`);
+
+    activeBtn?.classList.add("text-foreground");
+    activeBtn?.classList.remove("opacity-50");
+    activeContent?.classList.remove("hidden");
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    switchTab("experience");
+  });
+</script>

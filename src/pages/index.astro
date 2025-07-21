@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import myFace from '../assets/neil.png'
+import { Image } from 'astro:assets';
 import "../styles/global.css";
 import Header from '@components/Header.astro';
+import Card from '@components/Card.astro';
 import Footer  from "@components/Footer.astro";
-// import { Resume } from "@/components/Icons"; // Assuming it's a React component
 import { ArrowRight } from "@lucide/astro";
 import Links from "@components/Links.astro"; 
 import Resume from '@components/Icons/Resume.astro';
-// import Tabs from "@/components/Tabs/Tabs.jsx"; // React component
+import Tabs from '@components/Tabs/Tabs.astro';
 ---
 
 <Layout>
@@ -47,44 +49,83 @@ import Resume from '@components/Icons/Resume.astro';
             </a>
 
             <Links/>
-
-
           </div>
         </div>
       </div>
 
       <div>
-        <img
+          <Image src={myFace} alt="Neil Viloria"
           class="rounded-md"
-          src="/neil.png"
-          alt="Neil Viloria"
           width="200"
           height="300"
         />
+
       </div>
     </section>
 
     <section class="pb-16">
-      <!-- <Tabs client:load /> -->
+      <Tabs client:load />
     </section>
 
     <section class="pb-16">
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center pb-8">
         <h2 class="font-title text-3xl">featured projects</h2>
         <a href="/projects" class="text-secondary flex items-center gap-1">
           <span class="text-sm">view more</span>
           <ArrowRight size={20} />
         </a>
       </div>
+
+      <div class="grid grid-cols-2 gap-4">
+
+<Card
+  imgSrc="/images/project-dashboard.png"
+  title="Bonavoy"
+  description="A real-time dashboard built to track campaign performance across multiple platforms."
+          tags={["nextjs", 'GraphQL', 'Tailwind', 'TypeScript']}
+  source="https://github.com/yourname/astro-dashboard"
+/>
+<Card
+  imgSrc="/images/project-dashboard.png"
+  title="hurl"
+  description="A real-time dashboard built to track campaign performance across multiple platforms."
+  tags={["go"]}
+  source="https://github.com/yourname/astro-dashboard"
+/>
+
+        
+      </div>
     </section>
 
     <section class="pb-16">
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center pb-8">
         <h2 class="font-title text-3xl">open source work</h2>
         <a href="/projects" class="text-secondary flex items-center gap-1">
           <span class="text-sm">view more</span>
           <ArrowRight size={20} />
         </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+<Card
+  imgSrc="/images/project-dashboard.png"
+  title="LadyBird"
+            description="Implemented CSS Grid spacing per W3C spec, built devtools for debugging."
+
+          tags={["Swift", "SwiftUI", "UIKit", "c++", "qt"]}
+  link="https://example.com/dashboard"
+  source="https://github.com/yourname/astro-dashboard"
+/>
+
+<Card
+  imgSrc="/images/project-dashboard.png"
+  title="Code Edit"
+  description="A real-time dashboard built to track campaign performance across multiple platforms."
+          tags={["Swift", "SwiftUI", "UIKit"]}
+  link="https://example.com/dashboard"
+  source="https://github.com/yourname/astro-dashboard"
+/>
+        
       </div>
     </section>
   </main>
