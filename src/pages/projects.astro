@@ -1,13 +1,69 @@
 ---
-
 import "../styles/global.css";
-import Header from '@components/Header.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+import hurl from "../assets/hurl.webp";
+import bonavoy from "../assets/bonavoy.webp";
+import ladybird from "../assets/ladybird.webp";
+import codeedit from "../assets/codeedit.webp";
+import "../styles/global.css";
+import Header from "@components/Header.astro";
+import Card from "@components/Card.astro";
+import Footer from "@components/Footer.astro";
 ---
 
 <Layout>
+  <div class="m-auto max-w-3xl">
     <div class="m-auto max-w-3xl">
       <Header />
-      <h1 class="font-title">my projects.</h1>
+      <h1 class="font-title pt-16 text-5xl pb-8">my projects.</h1>
+
+      <section class="pb-16">
+        <div class="grid grid-cols-2 gap-4">
+          <Card
+            imgSrc={bonavoy}
+            title="Bonavoy"
+            description="A real-time collaborative travel planner."
+            tags={["nextjs", "GraphQL", "Tailwind", "TypeScript"]}
+            source="https://github.com/Bonavoy"
+          />
+          <Card
+            imgSrc={hurl}
+            title="hurl"
+            description="Postman-style HTTP workflows in your terminal"
+            tags={["Go"]}
+            source="https://github.com/neil-ptr/hurl"
+          />
+        </div>
+      </section>
+
+      <section class="pb-16">
+        <div class="flex justify-between items-center pb-8">
+          <h2 class="font-title text-3xl">open source work</h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <Card
+            imgSrc={ladybird}
+            title="LadyBird"
+            description="Implemented CSS Grid spacing per W3C spec, built devtools for debugging."
+            tags={["Swift", "SwiftUI", "UIKit", "C++", "Qt"]}
+            link="https://example.com/dashboard"
+            source="https://github.com/yourname/astro-dashboard"
+          />
+
+          <Card
+            imgSrc={codeedit}
+            title="Code Edit"
+            description="Added drag-and-drop support to the file tree and fixing a bug in the settings window."
+            tags={["Swift", "SwiftUI", "UIKit"]}
+            link="https://example.com/dashboard"
+            source="https://github.com/yourname/astro-dashboard"
+          />
+        </div>
+      </section>
     </div>
+
+    <Footer />
+  </div>
 </Layout>

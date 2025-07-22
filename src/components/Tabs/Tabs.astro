@@ -32,9 +32,9 @@ import TabButton from "./TabButton.astro";
       btn.classList.add("opacity-50", "text-foreground");
     });
 
-    document.querySelectorAll(".tab-content").forEach((el) =>
-      el.classList.add("hidden")
-    );
+    document
+      .querySelectorAll(".tab-content")
+      .forEach((el) => el.classList.add("hidden"));
 
     const activeBtn = document.getElementById(`tab-btn-${id}`);
     activeBtn?.classList.add("text-background", "bg-foreground");

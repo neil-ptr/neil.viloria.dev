@@ -1,139 +1,135 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import myFace from '../assets/neil.png'
-import hurl from '../assets/hurl.webp'
-import bonavoy from '../assets/bonavoy.webp'
-import ladybird from '../assets/ladybird.webp'
-import codeedit from '../assets/codeedit.webp'
-import { Image } from 'astro:assets';
+import myFace from "../assets/neil.png";
+import hurl from "../assets/hurl.webp";
+import bonavoy from "../assets/bonavoy.webp";
+import ladybird from "../assets/ladybird.webp";
+import codeedit from "../assets/codeedit.webp";
+import { Image } from "astro:assets";
 import "../styles/global.css";
-import Header from '@components/Header.astro';
-import Card from '@components/Card.astro';
-import Footer  from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Card from "@components/Card.astro";
+import Footer from "@components/Footer.astro";
 import { ArrowRight } from "@lucide/astro";
-import Links from "@components/Links.astro"; 
-import Resume from '@components/Icons/Resume.astro';
-import Tabs from '@components/Tabs/Tabs.astro';
+import Links from "@components/Links.astro";
+import Resume from "@components/Icons/Resume.astro";
+import Tabs from "@components/Tabs/Tabs.astro";
 ---
 
 <Layout>
-<div class="m-auto max-w-3xl">
-  <Header />
+  <div class="m-auto max-w-3xl px-4">
+    <Header />
 
-  <main>
-      <section class="pt-16 pb-12 flex justify-between gap-16 flex-col-reverse md:flex-row">
-      <div>
-        <div class="pb-4">
-          <h1 class="font-title text-5xl pb-2">hi, neil here. 👋</h1>
+    <main>
+      <section
+        class="pt-16 pb-12 flex justify-between gap-16 flex-col-reverse md:flex-row"
+      >
+        <div>
+          <div class="pb-4">
+            <h1 class="font-title text-5xl pb-2">hi, neil here. 👋</h1>
+            <p>Software Engineer at PLACE based in Canada 🇨🇦</p>
+          </div>
+
           <p>
-            Software Engineer at PLACE from Canada 🇨🇦
+            I specialize in distributed systems, infrastructure observability,
+            and backend development.
           </p>
-        </div>
 
-        <p>
-          I specialize in distributed systems, infrastructure observability,
-          and backend development.
-      </p>
+          <div class="pt-4">
+            <div>Let’s connect — I’m always up for a conversation</div>
+            <div class="text-[12px]">
+              For formal opportunities, email works best.
+            </div>
+          </div>
 
-        <div class="pt-4">
-          <div>Let’s connect — I’m always up for a conversation</div>
-          <div class="text-[12px]">
-            For formal opportunities, email works best.
+          <div class="pt-6">
+            <div class="flex gap-4 items-center">
+              <a href="/Neilzon_Viloria_2025.pdf" download>
+                <button
+                  class="flex items-center gap-4 border border-accent rounded-md px-4 py-1 cursor-pointer"
+                >
+                  <span>Resume</span>
+                  <Resume />
+                </button>
+              </a>
+
+              <Links />
+            </div>
           </div>
         </div>
 
-        <div class="pt-6">
-          <div class="flex gap-4 items-center">
-            <a href="/Neilzon_Viloria_2025.pdf" download>
-              <button class="flex items-center gap-4 border border-accent rounded-md px-4 py-1 cursor-pointer">
-                <span>Resume</span>
-                <Resume />
-              </button>
-            </a>
-
-            <Links/>
-          </div>
+        <div>
+          <Image
+            src={myFace}
+            alt="Neil Viloria"
+            class="rounded-md"
+            width="200"
+            height="300"
+          />
         </div>
-      </div>
+      </section>
 
-      <div>
-          <Image src={myFace} alt="Neil Viloria"
-          class="rounded-md"
-          width="200"
-          height="300"
-        />
+      <section class="pb-16"><Tabs /></section>
 
-      </div>
-    </section>
+      <section class="pb-16">
+        <div class="flex justify-between items-center pb-8">
+          <h2 class="font-title text-3xl">featured projects</h2>
+          <a href="/projects" class="text-secondary flex items-center gap-1">
+            <span class="text-sm">view more</span>
+            <ArrowRight size={20} />
+          </a>
+        </div>
 
-    <section class="pb-16">
-      <Tabs client:load />
-    </section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Card
+            imgSrc={bonavoy}
+            title="Bonavoy"
+            description="A real-time collaborative travel planner"
+            tags={["nextjs", "GraphQL", "Tailwind", "TypeScript"]}
+            source="https://github.com/Bonavoy"
+          />
+          <Card
+            imgSrc={hurl}
+            title="hurl"
+            description="Postman-style HTTP workflows in your terminal"
+            tags={["Go"]}
+            source="https://github.com/neil-ptr/hurl"
+          />
+        </div>
+      </section>
 
-    <section class="pb-16">
-      <div class="flex justify-between items-center pb-8">
-        <h2 class="font-title text-3xl">featured projects</h2>
-        <a href="/projects" class="text-secondary flex items-center gap-1">
-          <span class="text-sm">view more</span>
-          <ArrowRight size={20} />
-        </a>
-      </div>
+      <section class="pb-16">
+        <div class="flex justify-between items-center pb-8">
+          <h2 class="font-title text-3xl">open source work</h2>
+          <a href="/projects" class="text-secondary flex items-center gap-1">
+            <span class="text-sm">view more</span>
+            <ArrowRight size={20} />
+          </a>
+        </div>
 
-      <div class="grid grid-cols-2 gap-4">
-
-<Card
-          imgSrc={bonavoy}
-  title="Bonavoy"
-  description="A real-time collaborative travel planner."
-          tags={["nextjs", 'GraphQL', 'Tailwind', 'TypeScript']}
-  source="https://github.com/Bonavoy"
-/>
-<Card
-          imgSrc={hurl}
-  title="hurl"
-  description="Postman workflows but in the terminal"
-  tags={["Go"]}
-  source="https://github.com/neil-ptr/hurl"
-/>
-
-        
-      </div>
-    </section>
-
-    <section class="pb-16">
-      <div class="flex justify-between items-center pb-8">
-        <h2 class="font-title text-3xl">open source work</h2>
-        <a href="/projects" class="text-secondary flex items-center gap-1">
-          <span class="text-sm">view more</span>
-          <ArrowRight size={20} />
-        </a>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-<Card
-          imgSrc={ladybird}
-  title="LadyBird"
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Card
+            imgSrc={ladybird}
+            title="LadyBird"
             description="Implemented CSS Grid spacing per W3C spec, built devtools for debugging."
+            tags={["Swift", "SwiftUI", "UIKit", "C++", "Qt"]}
+            link="https://ladybird.org/"
+            source="https://github.com/LadybirdBrowser/ladybird"
+          />
 
-          tags={["Swift", "SwiftUI", "UIKit", "C++", "Qt"]}
-  link="https://example.com/dashboard"
-  source="https://github.com/yourname/astro-dashboard"
-/>
+          <Card
+            imgSrc={codeedit}
+            title="Code Edit"
+            description="Added drag-and-drop support to the file tree and fixing a bug in the settings window."
+            tags={["Swift", "SwiftUI", "UIKit"]}
+            link="https://www.codeedit.app/"
+            source="https://github.com/CodeEditApp/CodeEdit"
+          />
+        </div>
+      </section>
+    </main>
 
-<Card
-          imgSrc={codeedit}
-  title="Code Edit"
-  description="Contributed to an open-source project by adding drag-and-drop support to the file tree and fixing a bug in the settings window."
-          tags={["Swift", "SwiftUI", "UIKit"]}
-  link="https://example.com/dashboard"
-  source="https://github.com/yourname/astro-dashboard"
-/>
-        
-      </div>
-    </section>
-  </main>
-
-  <Footer />
-</div>
+    <Footer />
+  </div>
 </Layout>

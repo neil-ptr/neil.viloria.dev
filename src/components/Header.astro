@@ -1,17 +1,15 @@
 ---
-import { Sun } from "@lucide/astro";
+import ThemeToggle from "./ThemeToggle.astro"
 ---
-
 <header class="sticky pt-2 top-0">
-  <div class="justify-between flex w-full rounded-md bg-background/5 backdrop-blur-md p-2 items-center shadow-md border border-accent">
+  <div
+    class="justify-between flex w-full rounded-md bg-background/5 backdrop-blur-md p-2 items-center shadow-md border border-accent"
+  >
     <div class="flex gap-2 text-sm items-center">
-      <a href="/" class="px-4 py-1.5">home</a>
-      <a href="/projects" class="px-4 py-1.5">projects</a>
+      <a href="/" class="px-4 py-1.5 rounded-md hover:bg-accent">home</a>
+      <a href="/projects" class="px-4 py-1.5 rounded-md hover:bg-accent">projects</a>
     </div>
 
-    <button class="cursor-pointer p-1.5">
-      <Sun size={16} class="text-orange-300" />
-    </button>
+    <ThemeToggle />
   </div>
 </header>
-
