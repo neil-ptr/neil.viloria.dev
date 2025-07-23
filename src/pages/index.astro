@@ -28,7 +28,12 @@ import Tabs from "@components/Tabs/Tabs.astro";
         <div>
           <div class="pb-4">
             <div class="flex items-center pb-2">
-              <h1 class="font-title text-5xl">hi, neil here.</h1>
+              <h1
+                class="font-title text-5xl"
+                style="font-size: var(--text-5xl); line-height: var(--text-5xl--line-height);"
+              >
+                hi, neil here.
+              </h1>
               <div class="animate-wiggle text-5xl">👋</div>
             </div>
             <p>Software Engineer at PLACE based in Canada 🇨🇦</p>
@@ -75,7 +80,9 @@ import Tabs from "@components/Tabs/Tabs.astro";
         </div>
       </section>
 
-      <section class="pb-16"><Tabs /></section>
+      <section class="pb-16">
+        <Tabs />
+      </section>
 
       <section class="pb-16">
         <div class="flex justify-between items-center pb-8">
@@ -139,8 +146,8 @@ import Tabs from "@components/Tabs/Tabs.astro";
           />
         </div>
       </section>
-    </main>
 
-    <Footer />
+      <Footer />
+    </main>
   </div>
 </Layout>

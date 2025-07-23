@@ -7,15 +7,15 @@ import { Globe, FileJson2 } from "@lucide/astro";
 
 <div class="rounded-xl border border-accent flex flex-col justify-between">
   <div>
-    <a href={source}>
-      {
-        underConstruction ? (
-          <div class="w-[375px] h-[225px] aspect-[5/3] p-6">
-            <div class="bg-accent flex justify-center items-center w-full h-full">
-              Coming Soon
-            </div>
+    {
+      underConstruction ? (
+        <div class="w-[375px] h-[225px] aspect-[5/3] p-6">
+          <div class="bg-accent flex justify-center items-center w-full h-full">
+            Coming Soon
           </div>
-        ) : (
+        </div>
+      ) : (
+        <a href={link || source} target="_blank" rel="noopener noreferrer">
           <Image
             src={imgSrc}
             alt={title}
@@ -23,9 +23,9 @@ import { Globe, FileJson2 } from "@lucide/astro";
             width={375}
             height={225}
           />
-        )
-      }
-    </a>
+        </a>
+      )
+    }
 
     <div class="pb-6 px-6">
       <h2 class="font-semibold text-md">{title}</h2>
@@ -49,6 +49,8 @@ import { Globe, FileJson2 } from "@lucide/astro";
             <a
               href={link}
               class="py-1 flex items-center gap-1 px-2 text-[10px] bg-foreground text-background rounded-md font-semibold cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Globe size={10} /> Live
             </a>
@@ -59,6 +61,8 @@ import { Globe, FileJson2 } from "@lucide/astro";
             <a
               href={source}
               class="py-1 flex items-center gap-1 px-2 text-[10px] bg-foreground text-background rounded-md font-semibold cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FileJson2 size={10} />
               Source
