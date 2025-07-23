@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 
 import hurl from "../assets/hurl.webp";
+import portfolio from "../assets/portfolio.webp";
 import bonavoy from "../assets/bonavoy.webp";
 import ladybird from "../assets/ladybird.webp";
 import codeedit from "../assets/codeedit.webp";
@@ -19,7 +20,7 @@ import Footer from "@components/Footer.astro";
       <h1 class="font-title pt-16 text-5xl pb-8">my projects.</h1>
 
       <section class="pb-16">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Card
             imgSrc={bonavoy}
             title="Bonavoy"
@@ -34,6 +35,21 @@ import Footer from "@components/Footer.astro";
             tags={["Go"]}
             source="https://github.com/neil-ptr/hurl"
           />
+          <Card
+            imgSrc={portfolio}
+            title="neil.viloria.dev"
+            description="My portfolio"
+            tags={["Astro", "Tailwind"]}
+            source="https://github.com/neil-ptr/neil.viloria.dev"
+            link="https://neil.viloria.dev"
+          />
+          <Card
+            imgSrc={hurl}
+            title="CommonTools"
+            description="Ad-free, in-browser tools commonly used by developers and creatives"
+            underConstruction
+            tags={["NextJS", "TypeScript", "ShadCN", "Tailwind"]}
+          />
         </div>
       </section>
 
@@ -42,7 +58,7 @@ import Footer from "@components/Footer.astro";
           <h2 class="font-title text-3xl">open source work</h2>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Card
             imgSrc={ladybird}
             title="LadyBird"

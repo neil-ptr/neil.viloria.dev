@@ -1,18 +1,31 @@
 ---
-const { imgSrc, title, description, tags, link, source } = Astro.props;
+const { imgSrc, title, description, tags, link, source, underConstruction } =
+  Astro.props;
 import { Image } from "astro:assets";
 import { Globe, FileJson2 } from "@lucide/astro";
 ---
 
 <div class="rounded-xl border border-accent flex flex-col justify-between">
   <div>
-    <Image
-      src={imgSrc}
-      alt={title}
-      class="aspect-[5/3] p-6 w-full object-cover"
-      width={600}
-      height={170}
-    />
+    <a href={source}>
+      {
+        underConstruction ? (
+          <div class="w-[375px] h-[225px] aspect-[5/3] p-6">
+            <div class="bg-accent flex justify-center items-center w-full h-full">
+              Coming Soon
+            </div>
+          </div>
+        ) : (
+          <Image
+            src={imgSrc}
+            alt={title}
+            class="aspect-[5/3] p-6 w-full object-cover"
+            width={375}
+            height={225}
+          />
+        )
+      }
+    </a>
 
     <div class="pb-6 px-6">
       <h2 class="font-semibold text-md">{title}</h2>
@@ -35,7 +48,7 @@ import { Globe, FileJson2 } from "@lucide/astro";
           link && (
             <a
               href={link}
-              class="py-1 flex items-center gap-1 px-2 text-[10px] bg-foreground text-background rounded-md font-semibold"
+              class="py-1 flex items-center gap-1 px-2 text-[10px] bg-foreground text-background rounded-md font-semibold cursor-pointer"
             >
               <Globe size={10} /> Live
             </a>
@@ -45,7 +58,7 @@ import { Globe, FileJson2 } from "@lucide/astro";
           source && (
             <a
               href={source}
-              class="py-1 flex items-center gap-1 px-2 text-[10px] bg-foreground text-background rounded-md font-semibold"
+              class="py-1 flex items-center gap-1 px-2 text-[10px] bg-foreground text-background rounded-md font-semibold cursor-pointer"
             >
               <FileJson2 size={10} />
               Source
