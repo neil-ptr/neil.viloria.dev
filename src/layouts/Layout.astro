@@ -33,9 +33,17 @@ import interFontUrl from "@fontsource-variable/inter/files/inter-latin-wght-norm
     />
     <title>Neil Viloria</title>
   </head>
-  <body class="font-inter px-4 md:px-0">
+  <body
+    class="font-inter px-4 md:px-0 opacity-0 transition-opacity duration-250"
+  >
     <slot />
   </body>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.remove("opacity-0");
+      document.body.classList.add("opacity-100");
+    });
+  </script>
 </html>
 
 <style>

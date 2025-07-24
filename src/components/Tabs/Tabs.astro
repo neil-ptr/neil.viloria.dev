@@ -17,31 +17,39 @@ import TabButton from "./TabButton.astro";
     </div>
   </div>
 
-  <div id="tab-content-experience" class="tab-content hidden">
-    <ExperienceTab />
-  </div>
-  <div id="tab-content-education" class="tab-content hidden">
-    <EducationTab />
+  <div id="tab-wrapper" class="overflow-hidden transition-all duration-500">
+    <div id="tab-content-experience" class="tab-content hidden">
+      <ExperienceTab />
+    </div>
+    <div id="tab-content-education" class="tab-content hidden">
+      <EducationTab />
+    </div>
   </div>
 </div>
 
 <script is:inline>
   function switchTab(id) {
+    const wrapper = document.getElementById("tab-wrapper");
+    const newContent = document.getElementById(`tab-content-${id}`);
+
+    newContent.classList.remove("hidden");
+
+    const newHeight = newContent.offsetHeight;
+
+    document.querySelectorAll(".tab-content").forEach((el) => {
+      if (el !== newContent) el.classList.add("hidden");
+    });
+
+    wrapper.style.height = newHeight + "px";
+
     document.querySelectorAll(".tab-btn").forEach((btn) => {
       btn.classList.remove("text-background", "bg-foreground");
       btn.classList.add("opacity-50", "text-foreground");
     });
 
-    document
-      .querySelectorAll(".tab-content")
-      .forEach((el) => el.classList.add("hidden"));
-
     const activeBtn = document.getElementById(`tab-btn-${id}`);
     activeBtn?.classList.add("text-background", "bg-foreground");
     activeBtn?.classList.remove("opacity-50", "text-foreground");
-
-    const activeContent = document.getElementById(`tab-content-${id}`);
-    activeContent?.classList.remove("hidden");
   }
 
   window.addEventListener("DOMContentLoaded", () => {
