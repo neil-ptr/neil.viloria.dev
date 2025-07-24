@@ -3,6 +3,7 @@ const { imgSrc, title, description, tags, link, source, underConstruction } =
   Astro.props;
 import { Image } from "astro:assets";
 import { Globe, FileJson2 } from "@lucide/astro";
+import Tags from "./Tags.astro";
 ---
 
 <div class="rounded-xl border border-accent flex flex-col justify-between">
@@ -35,11 +36,7 @@ import { Globe, FileJson2 } from "@lucide/astro";
 
   <div>
     <div class="pb-4 px-6">
-      <div
-        class="flex flex-wrap gap-1 text-[10px] text-foreground font-semibold"
-      >
-        {tags.map((tag) => <span class="bg-accent px-1 rounded ">{tag}</span>)}
-      </div>
+      <Tags tags={tags} />
     </div>
 
     <div class="pb-6 px-6">

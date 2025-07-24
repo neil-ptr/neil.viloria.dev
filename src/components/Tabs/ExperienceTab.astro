@@ -1,3 +1,7 @@
+---
+import Tags from "../Tags.astro";
+---
+
 <ul>
   <li class="pb-2">
     <div
@@ -15,6 +19,19 @@
           >Present</span
         >
       </div>
+      <div class="pt-2">
+        <Tags
+          tags={[
+            "React",
+            "TypeScript",
+            "Tailwind",
+            "Redux",
+            "Python",
+            "RabbitMQ",
+            "Go",
+          ]}
+        />
+      </div>
     </div>
   </li>
 
@@ -29,6 +46,12 @@
         compliance for Ontario market entry.
       </div>
       <div class="text-xs">May 2024 - Jun 2024</div>
+
+      <div class="pt-2">
+        <Tags
+          tags={["Electron", "Express", "TypeScript", "DynamoDB", "Tailwind"]}
+        />
+      </div>
     </div>
   </li>
 
@@ -44,6 +67,10 @@
         improvements.
       </div>
       <div class="text-xs">Sep 2021 – May 2023</div>
+
+      <div class="pt-2">
+        <Tags tags={["Go", "Remix", "React", "TypeScript", "Tailwind"]} />
+      </div>
     </div>
   </li>
 
@@ -58,6 +85,19 @@
         reduce manual coordination.
       </div>
       <div class="text-xs">Sep 2020 – Sep 2021</div>
+
+      <div class="pt-2">
+        <Tags
+          tags={[
+            "NextJS",
+            "React",
+            "TypeScript",
+            "MongoDB",
+            "Python",
+            "Tailwind",
+          ]}
+        />
+      </div>
     </div>
   </li>
 </ul>
