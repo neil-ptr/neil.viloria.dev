@@ -1,5 +1,4 @@
 ---
-import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 
 import hurl from "../assets/hurl.webp";
@@ -7,7 +6,6 @@ import portfolio from "../assets/portfolio.webp";
 import bonavoy from "../assets/bonavoy.webp";
 import ladybird from "../assets/ladybird.webp";
 import codeedit from "../assets/codeedit.webp";
-import "../styles/global.css";
 import Header from "@components/Header.astro";
 import Card from "@components/Card.astro";
 import Footer from "@components/Footer.astro";
@@ -20,12 +18,12 @@ import Footer from "@components/Footer.astro";
       <h1 class="font-title pt-16 text-5xl pb-8">my projects.</h1>
 
       <section class="pb-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Card
             imgSrc={bonavoy}
             title="Bonavoy"
             description="A real-time collaborative travel planner."
-            tags={["nextjs", "GraphQL", "Tailwind", "TypeScript"]}
+            tags={["NextJS", "GraphQL", "Tailwind", "TypeScript"]}
             source="https://github.com/Bonavoy"
           />
           <Card

@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import "@fontsource/calistoga";
 import "@fontsource-variable/inter";
 
@@ -40,8 +41,7 @@ import interFontUrl from "@fontsource-variable/inter/files/inter-latin-wght-norm
   </body>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.remove("opacity-0");
-      document.body.classList.add("opacity-100");
+      document.body.classList.replace("opacity-0", "opacity-100");
     });
   </script>
 </html>

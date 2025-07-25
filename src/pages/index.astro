@@ -7,7 +7,6 @@ import bonavoy from "../assets/bonavoy.webp";
 import ladybird from "../assets/ladybird.webp";
 import codeedit from "../assets/codeedit.webp";
 import { Image } from "astro:assets";
-import "../styles/global.css";
 import Header from "@components/Header.astro";
 import Card from "@components/Card.astro";
 import Footer from "@components/Footer.astro";
@@ -41,7 +40,7 @@ import Tabs from "@components/Tabs/Tabs.astro";
 
           <p>
             I specialize in distributed systems, infrastructure observability,
-            and backend development, with a growing interest in C++ and
+            and fullstack development, with a growing interest in C++ and
             systems-level programming
           </p>
 
@@ -92,8 +91,8 @@ import Tabs from "@components/Tabs/Tabs.astro";
             href="/projects"
             class="text-secondary flex items-center gap-1 py-2"
           >
-            <span class="text-sm">view more</span>
-            <ArrowRight size={20} />
+            <span class="text-sm line-clamp-1">view more</span>
+            <ArrowRight size={20} class="hidden sm:inline" />
           </a>
         </div>
 
@@ -122,8 +121,8 @@ import Tabs from "@components/Tabs/Tabs.astro";
             href="/projects"
             class="text-secondary flex items-center gap-1 py-2"
           >
-            <span class="text-sm">view more</span>
-            <ArrowRight size={20} />
+            <span class="text-sm line-clamp-1">view more</span>
+            <ArrowRight size={20} class="hidden sm:inline" />
           </a>
         </div>
 
