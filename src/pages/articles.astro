@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Tags from "@components/Tags.astro";
+---
+
+<Layout>
+  <div class="m-auto max-w-3xl">
+    <div class="m-auto max-w-3xl">
+      <Header />
+      <h1 class="font-title pt-16 text-5xl pb-8">my articles.</h1>
+      <section class="pb-16">
+        <ul>
+          <li>
+            <a
+              href="/articles/cracking-dynamic-programming"
+              class="flex flex-col gap-1 p-4 text-secondary border border-accent rounded-md"
+            >
+              <h2 class="text-foreground font-semibold">
+                Cracking Dynamic Programming: The White Whale of Technical
+                Interviews
+              </h2>
+              <h3 class="text-xs">
+                Led observability and developer tooling initiatives across the
+                marketing platform. Built internal tools for managing real
+                estate data pipelines and improved platform reliability.
+              </h3>
+
+              <Tags tags={["dynamic-programming", "algorithms"]} />
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <Footer />
+    </div>
+  </div>
+</Layout>

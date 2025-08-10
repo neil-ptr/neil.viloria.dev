@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+import Tags from "@components/Tags.astro";
+---
+
+<Layout>
+  <div class="m-auto max-w-3xl">
+    <div class="m-auto max-w-3xl">
+      <Header />
+      <div class="pt-16 pb-8">
+        <h1 class="font-title text-5xl pb-2">
+          Cracking Dynamic Programming: The White Whale of Technical Interviews
+        </h1>
+
+        <Tags tags={["dynamic-programming", "algorithms"]} />
+      </div>
+      <section class="pb-16"></section>
+
+      <Footer />
+    </div>
+  </div>
+</Layout>

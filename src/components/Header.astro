@@ -1,15 +1,33 @@
 ---
-
+import { House, FolderCode, Newspaper } from "@lucide/astro";
 ---
 
-<header class="sticky pt-2 top-0 z-10">
+<header class="sticky pt-2 top-0 z-10 flex justify-center">
   <div
-    class="justify-between flex w-full rounded-md bg-background/5 backdrop-blur-md p-2 items-center shadow-md border border-accent"
+    class="flex rounded-full bg-background/5 backdrop-blur-md p-2 items-center shadow-md border border-white/20"
   >
     <div class="flex gap-2 text-sm items-center">
-      <a href="/" class="px-4 py-1.5 rounded-md hover:bg-accent">home</a>
-      <a href="/projects" class="px-4 py-1.5 rounded-md hover:bg-accent"
-        >projects</a
+      <a
+        href="/"
+        class="px-4 py-1.5 rounded-full hover:bg-accent flex items-center gap-1 font-semibold transition-all duration-75"
+      >
+        <House size={16} stroke-width={2} />
+        home</a
+      >
+      <a
+        href="/projects"
+        class="px-4 py-1.5 rounded-full hover:bg-accent flex items-center gap-1 font-semibold transition-all duration-75"
+      >
+        <FolderCode size={16} stroke-width={2} />
+        projects</a
+      >
+
+      <a
+        href="/articles"
+        class="px-4 py-1.5 rounded-full hover:bg-accent flex items-center gap-1 font-semibold transition-all duration-75"
+      >
+        <Newspaper size={16} stroke-width={2} />
+        articles</a
       >
     </div>
   </div>
